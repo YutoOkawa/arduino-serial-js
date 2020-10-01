@@ -5,10 +5,11 @@
 // 1秒おき送信
 
 const SerialPort = require('serialport');
-// const port = new SerialPort('/dev/cu.usbmodem14141', { // Mac
-const port = new SerialPort('COM3', { // Windows
-  parser: SerialPort.parsers.readline('\n'),
-  baudrate: 9600
+const portName = process.argv[2]
+const port = new SerialPort(portName, { // Mac
+// const port = new SerialPort('COM3', { // Windows
+  parser: new SerialPort.parsers.Readline('\n'),
+  baudRate: 115200
 });
 
 port.on('open', function () {

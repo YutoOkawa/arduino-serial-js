@@ -5,7 +5,7 @@ String okStr = "OK";
 
 void setup() {
   pinMode(LED, OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 // シリアルポートに定期的に書き込んではデータを受け取る
